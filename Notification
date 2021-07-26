@@ -1,0 +1,38 @@
+import React from "react";
+import { View, StyleSheet, Button, Alert } from "react-native";
+
+const showAlert = () =>
+  Alert.alert(
+    "You have one notifiactaion",
+    "Your tranning class is on 4pm",
+    [
+      {
+        text: "dismiss",
+        onPress: () => Alert.alert("Your notification is dismissed now"),
+        style: "dismiss",
+      },
+    ],
+    {
+      cancelable: true,
+      onDismiss: () =>
+        Alert.alert(
+          "This alert was dismissed by tapping outside of the alert dialog."
+        ),
+    }
+  );
+
+const App = () => (
+   <View style={styles.container}>
+    <Button title="Notification" onPress={showAlert} />
+  </View>
+);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  }
+});
+
+export default App;
