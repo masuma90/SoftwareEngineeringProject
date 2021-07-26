@@ -1,0 +1,101 @@
+import * as React from 'react';
+import { Text, View,Image, StyleSheet,TouchableOpacity,CheckBox, TextInput  } from 'react-native';
+import Constants from 'expo-constants';
+
+// You can import from local files
+import AssetExample from './components/AssetExample';
+// or any pure javascript modules available in npm
+import { Card } from 'react-native-paper';
+
+
+export default function App() {
+  let [date, setDate]= React.useState("")
+    let [wtime, setWtime]= React.useState("")
+    let [durations, setDurations]= React.useState("")
+  let [time, setTime]= React.useState("")
+function onChangeName() 
+
+ { 
+
+}
+  return (
+    <View style={styles.container}>
+    <Text style={{fontSize:"24px",textAlign: 'center', color:"#a52a2a"}}> Health and Fitness App</Text>
+    <Text style={{fontSize:"18px",textAlign: 'left', color:"#4b0082"}}> Progress report</Text>
+   
+      <Card style={{padding:"15px", backgroundColor: "#008080", marginTop: "10px"}}> 
+      <Text> Enter the date?</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={(value)=>setDate(value)}
+        value={date}
+        keyboardType="Number"
+      />
+      <Text> Workout duration</Text>
+
+      <TextInput
+        style={styles.input}
+        onChangeText={(value)=>setDurations(value)}
+        value={durations}
+        keyboardType="Number"
+      />
+     
+      <Text> Wrokout type</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={(value)=>setWtime(value)}
+        value={wtime}
+        keyboardType="Text"
+      />
+
+
+
+<Text> Total time spend</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={(value)=>setTime(value)}
+        value={time}
+        keyboardType="Text"
+      />
+      </Card>
+      
+      <TouchableOpacity style={styles.ButtonText}>
+    
+<Text>Save</Text>
+</TouchableOpacity>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#8fbc8f',
+    padding: 8,
+  },
+  input : {
+width: "100%",
+backgroundColor: "#faf0e6",
+padding: 10,
+marginBottom: 10,
+
+},
+ButtonText : {
+  width:100,
+  fontSize: 15,
+  textAlign: 'center',
+  
+  padding: 5,
+  marginTop:5,
+  color: '#f5fffa',
+   borderRadius: 20,
+   backgroundColor: "lightcoral"
+   },
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+});
